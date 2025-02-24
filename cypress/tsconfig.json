@@ -9,7 +9,6 @@
       // "composite": true,
       "jsx": "react-jsx",
       "strict": true,
-      "rootDir": "."
     },
     "include": ["**/*.tsx", "**/*.ts", "**/*.js", "**/*.jsx", "**/*"]
   }
