@@ -4,15 +4,15 @@ export default defineConfig({
   component: {
     devServer: {
       framework: "react",
-      bundler: "vite",
+      bundler: "vite", // Use Vite as the bundler
     },
-    specPattern: "cypress/component/**/*.cy.{ts,tsx}",
+    specPattern: "cypress/component/**/*.cy.{ts,tsx}", // Pattern for component test files
   },
 
   e2e: {
     setupNodeEvents(on, config) {
-      // implement node event listeners here
+      // Your node event listeners for E2E tests
     },
-    baseUrl: 'http://localhost:3001'
+    baseUrl: 'http://localhost:3001', // Ensure your app runs here
   },
 });

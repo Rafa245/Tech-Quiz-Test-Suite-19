@@ -1,0 +1,30 @@
+[
+    {
+        "question": "What is the capital of France?",
+        "answers": [
+          { "text": "Berlin", "isCorrect": false },
+          { "text": "Madrid", "isCorrect": false },
+          { "text": "Rome", "isCorrect": false },
+          { "text": "Paris", "isCorrect": true }
+        ]
+      },
+      {
+        "question": "What is 2 + 2?",
+        "answers": [
+          { "text": "6", "isCorrect": false },
+          { "text": "4", "isCorrect": true },
+          { "text": "9", "isCorrect": false },
+          { "text": "7", "isCorrect": false }
+        ]
+      },
+      {
+        "question": "Which programming language is used for web development?",
+        "answers": [
+          { "text": "C++", "isCorrect": false },
+          { "text": "Java", "isCorrect": false },
+          { "text": "JavaScript", "isCorrect": true },
+          { "text": "Python", "isCorrect": false }
+        ]
+      }
+  ]
+    
