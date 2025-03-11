@@ -1,16 +1,39 @@
-import React from 'react';
-import { mount as cypressMount, MountOptions } from 'cypress/react';
-import { MemoryRouter, MemoryRouterProps } from 'react-router-dom';
-import './commands';
+// ***********************************************************
+// This example support/component.ts is processed and
+// loaded automatically before your test files.
+//
+// This is a great place to put global configuration and
+// behavior that modifies Cypress.
+//
+// You can change the location of this file or turn off
+// automatically serving support files with the
+// 'supportFile' configuration option.
+//
+// You can read more here:
+// https://on.cypress.io/configuration
+// ***********************************************************
 
-// Augment the Cypress namespace to include type definitions for your custom command
+// Import commands.js using ES2015 syntax:
+import './commands'
+
+// Alternatively you can use CommonJS syntax:
+// require('./commands')
+
+import React from 'react';
+import { mount, MountOptions, MountReturn } from 'cypress/react'
+import { MemoryRouterProps, MemoryRouter } from 'react-router-dom'
+
+// Augment the Cypress namespace to include type definitions for
+// your custom command.
+// Alternatively, can be defined in cypress/support/component.d.ts
+// with a <reference path="./component" /> at the top of your spec.
 declare global {
   namespace Cypress {
     interface Chainable {
       mount(
         component: React.ReactNode,
         options?: MountOptions & { routerProps?: MemoryRouterProps }
-      ): Cypress.Chainable<void>; // Return type should be `Chainable<void>`
+      ): Cypress.Chainable<MountReturn>
     }
   }
 }
@@ -18,11 +41,10 @@ declare global {
 Cypress.Commands.add('mount', (component, options = {}) => {
   const { routerProps = { initialEntries: ['/'] }, ...mountOptions } = options;
 
-  // Wrap the component with MemoryRouter and pass it to Cypress mount function
-  const wrappedComponent = <MemoryRouter {...routerProps}>{component}</MemoryRouter>;
+  const wrapped = <MemoryRouter {...routerProps}>{component}</MemoryRouter>
 
-  // Cypress expects `void` return type, so we return Cypress's `mount` function.
-  cypressMount(wrappedComponent, mountOptions);
+  return mount(wrapped, mountOptions)
+})
 
-  // Ensure we do not return anything as Cypress expects `void` return type
-});
+// Example use:
+// cy.mount(<MyComponent />)
