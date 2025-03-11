@@ -25,7 +25,7 @@
   ## Contributors
   Chatgpt/DeepSeek
   ## Testing
-Link to Github project: https://github.com/Rafa245/Book-Search-Engine-18
+Link to Github project: https://github.com/Rafa245/Tech-Quiz-Test-Suite-19
 
 Link to Video: https://www.youtube.com/watch?v=5yWjo3B5E78
 
